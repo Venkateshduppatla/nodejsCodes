@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AXIS BANK</title>
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function() 
+		{
+			$("#outputData").load("http://localhost/displayRecords");
+			$("#saveButton").click(function()
+			{
+				$("#outputData").load("http://localhost/insertRecord?accountNumber="+$("#accountNumber").val()+"&name="+$("#name").val()+"&balance="+$("#balance").val());
+				$("#outputData1").load("http://localhost/displayRecords");
+				
+			});
+		});
+    </script>
+    <div id="inputUi">
+	   <br><input type="text" name="accountNumber", placeholder="Account Number" autofocus="autofocus" id="accountNumber">
+		<input type="text" name="name" placeholder="Customer Name" id="name">
+		<input type="text" name="balance" placeholder="Balance" id="balance"><br>
+		<center>
+			<button id="saveButton"><span class="glyphicon glyphicon-save">SAVE</span></button>
+		</center>
+    </div>
+    <div id="outputData"></div>
+    <div id="outputData1"></div>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>CRUDS</title>
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("#displayButton").click(function()
+			{
+				$("#outputData").load("http://localhost/displayRecords");
+			});
+			$("#insertButton").click(function()
+			{
+				// $("#outputData").load("http://localhost/insertRecord?accountNumber='+$('#accountNumber').val()+'&name='+$('#name').val()+'&balance='+$('#balance').val()");
+				$("#outputData").load("http://localhost/insertRecord?accountNumber="+$("#accountNumber").val()+"&name="+$("#name").val()+"&balance="+$("#balance").val());
+			});
+
+		});
+	</script>
+	<button id="displayButton">Display</button>
+	<input type="text" name="accountNumber", placeholder="Account Number" autofocus="autofocus" id="accountNumber">
+		<input type="text" name="name" placeholder="Customer Name" id="name">
+		<input type="text" name="balance" placeholder="Balance" id="balance"><br>
+	<button id="insertButton">INSERT</button>	
+	<p id="outputData"></p>
+</body>
+</html> -->
